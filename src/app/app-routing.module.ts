@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-//TODO LAZY LOADING para, home page, contact page, etc
+//TODO Crear módulo para servicios, nosotros/experiencia, contacto, contabilidad(admins), y su respectivo lazy loading
 const routes: Routes = [
   {
     path: 'auth',

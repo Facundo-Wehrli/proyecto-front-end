@@ -1,42 +1,21 @@
-import { Component, inject } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ValidatorsService } from '../../services/validators.service';
+import { FormServiceService } from '../../services/form-service.service';
 
 @Component({
   templateUrl: './register-page.component.html',
   styleUrls: ['./register-page.component.css'],
 })
-export class RegisterPageComponent {
-  private fb = inject(FormBuilder);
+export class RegisterPageComponent implements OnInit {
+  public myForm: FormGroup = new FormGroup({});
+  ngOnInit(): void {
+    this.myForm = this.formService.createForm();
+  }
+
   private validatorsService = inject(ValidatorsService);
-  public myForm: FormGroup = this.fb.group(
-    {
-      name: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern(
-            this.validatorsService.firstNameAndLastnamePattern
-          ),
-        ],
-      ],
-      email: [
-        '',
-        [
-          Validators.required,
-          Validators.pattern(this.validatorsService.emailPattern),
-        ],
-      ],
-      username: ['', [Validators.required]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      password2: ['', [Validators.required]],
-    },
-    {
-      validators: [
-        this.validatorsService.isFieldOneEqualFieldTwo('password', 'password2'),
-      ],
-    }
-  );
+  private fb = inject(FormBuilder);
+  private formService = inject(FormServiceService);
 
   public isValidField(field: string) {
     return this.validatorsService.isValidField(this.myForm, field);

@@ -38,11 +38,11 @@ export class RegisterPageComponent {
     }
   );
 
-  isValidField(field: string) {
+  public isValidField(field: string) {
     return this.validatorsService.isValidField(this.myForm, field);
   }
 
-  onSubmit() {
+  public onSubmit() {
     this.myForm.markAllAsTouched();
   }
 }

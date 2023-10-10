@@ -14,7 +14,6 @@ export class RegisterPageComponent implements OnInit {
   }
 
   private validatorsService = inject(ValidatorsService);
-  private fb = inject(FormBuilder);
   private formService = inject(FormServiceService);
 
   public isValidField(field: string) {

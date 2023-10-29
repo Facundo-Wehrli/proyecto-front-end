@@ -1,5 +1,5 @@
-import { Component, inject } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'layout',
@@ -7,14 +7,24 @@ import { Router } from '@angular/router';
   styleUrls: ['./layout.component.css'],
 })
 export class LayoutComponent {
-  private router = inject(Router);
+  constructor(private router: Router) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.checkNavbarVisibility(event.url);
+      }
+    });
+  }
+  shouldShowNavbar: boolean = false;
 
-/**
- * The function shouldShowNavbar returns true if the current URL is not '/auth/login' or
- * '/auth/register', and false otherwise.
- */
-  shouldShowNavbar(): boolean {
-    const currentUrl = this.router.url;
-    return currentUrl !== '/auth/login' && currentUrl !== '/auth/register';
+  checkNavbarVisibility(currentUrl: string): void {
+    if (
+      currentUrl !== '/auth/login' &&
+      currentUrl !== '/auth/register' &&
+      currentUrl !== '/'
+    ) {
+      this.shouldShowNavbar = true;
+    } else {
+      this.shouldShowNavbar = false;
+    }
   }
 }

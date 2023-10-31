@@ -1,10 +1,20 @@
-<p>navbar works!</p>
-<!-- TODO buttons that will move betweeen the pages from hay-harvest module pages (homePage, contactPage, data, etc) -->
-<!-- <nav class="navbar bg-body-tertiary">
+<nav class="navbar bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
-      Bootstrap
+    <a class="navbar-brand" [routerLink]="['/core/home']">
+      <img
+        src="assets/wehrli.svg"
+        alt="Logo"
+        width="30"
+        height="24"
+        class="d-inline-block align-text-top"
+      />
+      Wehrli Servicios Agropecuarios
     </a>
+    <a class="nav-link active" aria-current="page" [routerLink]="['/core/home']"
+      >Inicio</a
+    >
+    <a class="nav-link" [routerLink]="['/core/contact']">Contacto</a>
+    <a class="nav-link" [routerLink]="['/core/services']">Servicios</a>
+    <a class="nav-link" [routerLink]="['/core/about']">Nosotros</a>
   </div>
-</nav> -->
+</nav>

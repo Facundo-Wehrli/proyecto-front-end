@@ -14,7 +14,7 @@ export class LayoutComponent {
       }
     });
   }
-  shouldShowNavbar: boolean = false;
+  shouldShow: boolean = false;
 
   checkNavbarVisibility(currentUrl: string): void {
     if (
@@ -22,9 +22,9 @@ export class LayoutComponent {
       currentUrl !== '/auth/register' &&
       currentUrl !== '/'
     ) {
-      this.shouldShowNavbar = true;
+      this.shouldShow = true;
     } else {
-      this.shouldShowNavbar = false;
+      this.shouldShow = false;
     }
   }
 }

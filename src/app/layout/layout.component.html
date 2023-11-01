@@ -1,7 +1,7 @@
 <div class="container">
-  <navbar *ngIf="shouldShowNavbar"></navbar>
+  <navbar *ngIf="shouldShow"></navbar>
   <div class="col-12">
     <router-outlet />
   </div>
-  <footer></footer>
+  <footer *ngIf="shouldShow"></footer>
 </div>

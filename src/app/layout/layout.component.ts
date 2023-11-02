@@ -17,10 +17,16 @@ export class LayoutComponent {
   shouldShow: boolean = true;
 
   checkNavbarVisibility(currentUrl: string): void {
-    if (currentUrl === '/auth' || currentUrl === '/auth/login' || currentUrl === '/auth/register' || currentUrl === '/') {
-      this.shouldShow = false;
-    } else {
+    if (
+      currentUrl === '/core' ||
+      currentUrl === '/core/home' ||
+      currentUrl === '/core/contact' ||
+      currentUrl === '/' ||
+      currentUrl === '/core/about'
+    ) {
       this.shouldShow = true;
+    } else if (currentUrl === '/auth' || currentUrl === '/auth/login' || currentUrl === '/auth/register') {
+      this.shouldShow = false;
     }
   }
 }

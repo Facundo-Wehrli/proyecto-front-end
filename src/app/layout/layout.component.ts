@@ -14,17 +14,13 @@ export class LayoutComponent {
       }
     });
   }
-  shouldShow: boolean = false;
+  shouldShow: boolean = true;
 
   checkNavbarVisibility(currentUrl: string): void {
-    if (
-      currentUrl !== '/auth/login' &&
-      currentUrl !== '/auth/register' &&
-      currentUrl !== '/'
-    ) {
-      this.shouldShow = true;
-    } else {
+    if (currentUrl === '/auth' || currentUrl === '/auth/login' || currentUrl === '/auth/register' || currentUrl === '/') {
       this.shouldShow = false;
+    } else {
+      this.shouldShow = true;
     }
   }
 }

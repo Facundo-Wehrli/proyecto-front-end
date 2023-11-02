@@ -15,13 +15,9 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'auth',
-  },
-  {
-    path: '',
     redirectTo: 'core',
-    pathMatch: 'full',
   },
+
 ];
 
 @NgModule({

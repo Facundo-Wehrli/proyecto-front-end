@@ -17,6 +17,11 @@ const routes: Routes = [
     path: '**',
     redirectTo: 'core',
   },
+  {
+    path:'',
+    redirectTo:'core',
+    pathMatch:'full'
+  }
 
 ];
 

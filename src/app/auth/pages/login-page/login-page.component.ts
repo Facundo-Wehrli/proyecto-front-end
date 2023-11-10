@@ -1,7 +1,7 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-import { ValidatorsService } from '../../services/validators.service';
-import { FormServiceService } from '../../services/form-service.service';
+import { ValidatorsService } from '../../../shared/services/validators.service';
+import { FormServiceService } from '../../../shared/services/form-service.service';
 @Component({
   templateUrl: './login-page.component.html',
   styleUrls: ['./login-page.component.css'],

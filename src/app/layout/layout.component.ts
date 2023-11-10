@@ -25,7 +25,11 @@ export class LayoutComponent {
       currentUrl === '/core/about'
     ) {
       this.shouldShow = true;
-    } else if (currentUrl === '/auth' || currentUrl === '/auth/login' || currentUrl === '/auth/register') {
+    } else if (
+      currentUrl === '/auth' ||
+      currentUrl === '/auth/login' ||
+      currentUrl === '/auth/register'
+    ) {
       this.shouldShow = false;
     }
   }

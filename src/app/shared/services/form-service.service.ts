@@ -31,6 +31,21 @@ export class FormServiceService {
         username: ['', [Validators.required]],
         password: ['', [Validators.required, Validators.minLength(6)]],
         password2: ['', [Validators.required]],
+        phoneNumber: [
+          '',
+          [
+            Validators.required,
+            Validators.pattern(this.validatorsService.phoneNumberPattern),
+          ],
+        ],
+        message: [
+          '',
+          [
+            Validators.required,
+            Validators.minLength(2),
+            Validators.maxLength(300),
+          ],
+        ],
       },
       {
         validators: [

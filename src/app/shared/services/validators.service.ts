@@ -5,6 +5,7 @@ import { FormGroup, ValidationErrors } from '@angular/forms';
 export class ValidatorsService {
   public firstNameAndLastnamePattern: string = '([a-zA-Z]+) ([a-zA-Z]+)';
   public emailPattern: string = '^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$';
+  public phoneNumberPattern: string = '^[0-9]{10}$';
 
   public isValidField(form: FormGroup, field: string): boolean | null {
     /*  check if a specific form field has errors and has been touched by the user. */

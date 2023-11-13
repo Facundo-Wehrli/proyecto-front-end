@@ -1,3 +1,157 @@
-<p>contact-page works!</p>
-<!-- TODO formulario de contacto con validaciones en cada campo, a su vez se utilizará la librer´'ia Email.js ( la misma uqe se utilizó en el porfolio ) -->
-<!-- TODO el formulario de contacto de de modern-business está weno para robar, de todas maneras hacerlo con Reacive Forms -->
+<body class="d-flex flex-column">
+  <main class="flex-shrink-0">
+    <!-- Page content-->
+    <section class="py-5">
+      <div class="container px-5">
+        <!-- Contact form-->
+        <div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+          <div class="text-center mb-5">
+            <h1 class="fw-bolder">Contactanos</h1>
+            <p class="lead fw-normal text-muted mb-0">
+              Contanos tu propuesta, y nos pondremos en contacto.
+            </p>
+          </div>
+          <div class="row gx-5 justify-content-center">
+            <div class="col-lg-8 col-xl-6">
+              <form
+                [formGroup]="myForm"
+                (ngSubmit)="onSubmit()"
+                autocomplete="off"
+                id="contactForm"
+              >
+                <!-- Name input-->
+                <div class="form-floating mb-3">
+                  <input
+                    formControlName="name"
+                    class="form-control"
+                    id="name"
+                    type="text"
+                    placeholder=""
+                  />
+                  <label for="name">Nombre completo</label>
+                  <span
+                    *ngIf="isValidField('name')"
+                    class="form-text text-danger"
+                  >
+                    Debe de ser en formato de nombre y apellido
+                  </span>
+                </div>
+                <!-- Email address input-->
+                <div class="form-floating mb-3">
+                  <input
+                    formControlName="email"
+                    class="form-control"
+                    id="email"
+                    type="email"
+                    placeholder=""
+                  />
+                  <label for="email">Email</label>
+                  <span
+                    *ngIf="isValidField('email')"
+                    class="form-text text-danger"
+                  >
+                    Debe de ser un email válido
+                  </span>
+                </div>
+
+                <!-- Phone number input-->
+                <div class="form-floating mb-3">
+                  <input
+                  formControlName="phoneNumber"
+                    class="form-control"
+                    id="phone"
+                    type="tel"
+                    placeholder=""
+                  />
+                  <label for="phone">Número de teléfono</label>
+                  <span
+                    *ngIf="isValidField('phoneNumber')"
+                    class="form-text text-danger"
+                  >
+                    debe tener 10 números ej: 3462123456
+                  </span>
+                </div>
+                <!-- Message input-->
+                <div class="form-floating mb-3">
+                  <textarea
+                  formControlName="message"
+                    class="form-control"
+                    id="message"
+                    type="text"
+                    placeholder=""
+                    style="height: 10rem"
+                  ></textarea>
+                  <label for="message">Mensaje</label>
+                  <span
+                  *ngIf="isValidField('message')"
+                  class="form-text text-danger"
+                >
+                el mensaje debe contener almenos 2 caracteres y como máximo 300
+                </span>
+                </div>
+                <!--TODO mensaje enviado correctamente(EMAIL.JS portfolio copiar)-->
+                <!---->
+                <!-- This is what your users will see when the form-->
+                <!-- has successfully submitted-->
+                <!-- <div class="d-none" id="submitSuccessMessage">
+                  <div class="text-center mb-3">
+                    <div class="fw-bolder">Form submission successful!</div>
+                    To activate this form, sign up at
+                    <br />
+                  </div>
+                </div> -->
+                <!-- Submit error message-->
+
+                <!-- Submit Button-->
+                <div class="d-grid">
+                  <button
+                    type="button"
+                    class="btn btn-primary btn-lg btn-block"
+                    id="submitButton"
+                    type="submit"
+                  >
+                    Enviar
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <!-- Contact cards-->
+        <div class="row gx-5 row-cols-2 row-cols-lg-4 py-5">
+          <div class="col">
+            <div
+              class="feature bg-primary bg-gradient text-white rounded-3 mb-3"
+            >
+              <i class="bi bi-whatsapp"></i>
+            </div>
+            <div class="h5 mb-2">WhatsApp</div>
+            <p class="text-muted mb-0">
+              <!-- https://crear.wa.link/ -->
+              <a href="https://wa.link/suufv9" class="link-dark">Click Acá!</a>
+            </p>
+          </div>
+          <div class="col">
+            <div
+              class="feature bg-primary bg-gradient text-white rounded-3 mb-3"
+            >
+              <i class="bi bi-envelope-at"></i>
+            </div>
+            <div class="h5">email</div>
+            <p class="text-muted mb-0">wehrlifacundo9@gmail.com</p>
+          </div>
+
+          <div class="col">
+            <div
+              class="feature bg-primary bg-gradient text-white rounded-3 mb-3"
+            >
+              <i class="bi bi-telephone"></i>
+            </div>
+            <div class="h5">Llamada</div>
+            <p class="text-muted mb-0">3462633583</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>

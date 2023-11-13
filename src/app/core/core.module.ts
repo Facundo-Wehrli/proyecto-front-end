@@ -7,6 +7,7 @@ import { ContactPageComponent } from './pages/contact-page/contact-page.componen
 import { WeatherPageComponent } from './pages/weather-page/weather-page.component';
 import { ServicesPageComponent } from './pages/services-page/services-page.component';
 import { AboutPageComponent } from './pages/about-page/about-page.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { AboutPageComponent } from './pages/about-page/about-page.component';
   ],
   imports: [
     CommonModule,
-    CoreRoutingModule
+    CoreRoutingModule,
+    SharedModule
   ]
 })
 export class CoreModule { }

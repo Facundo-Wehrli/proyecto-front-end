@@ -9,14 +9,14 @@
         class="d-inline-block align-text-top"
       />
     </a>
+    <button
+      [routerLink]="['/core/home']"
+      class="btn btn-outline-success me-2"
+      type="button"
+    >
+      Inicio
+    </button>
     <div class="ms-auto">
-      <button
-        [routerLink]="['/core/home']"
-        class="btn btn-outline-success me-2"
-        type="button"
-      >
-        Inicio
-      </button>
       <button
         [routerLink]="['/core/services']"
         class="btn btn-outline-success me-2"
@@ -39,5 +39,12 @@
         Contacto
       </button>
     </div>
+    <button
+      [routerLink]="['/auth']"
+      class="btn btn-outline-dark me-2"
+      type="button"
+    >
+      cuenta
+    </button>
   </div>
 </nav>
